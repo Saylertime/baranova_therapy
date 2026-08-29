@@ -1,11 +1,14 @@
 from flask import Flask, send_file
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="assets",
+    static_url_path="/assets"
+)
+
 
 @app.route("/")
-
 def index():
-
     return send_file("index.html")
 
 
